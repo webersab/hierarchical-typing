@@ -1,4 +1,4 @@
-package hiertype :: .versioner=disk .path="/exp/tchen/proj/hierarchical-typing" .rev=NULL {
+package hiertype :: .versioner=disk .path="/disk/scratch_big/sweber/hierarchical-typing" .rev=NULL {
     cd aux
     sbt clean compile assembly
 }
@@ -7,19 +7,8 @@ package concreteAida :: .versioner=disk .path="/exp/tchen/proj/concrete-aida" .r
 
 global {
 
-  grid="sge"
-  gpuId="\$SGE_HGR_gpu"
-
-  .action_flags=(Device:
-    GPU="-q gpu.q@@2080"
-    CPU=""
-  )
-
-  .resource_flags=(Device:
-    GPU="-l 'gpu=1,h_rt=48:00:00,mem_free=20G'"
-    CPU="-l 'h_rt=48:00:00,mem_free=20G'"
-  )
-
+  grid="shell"
+  gpuId="0,1,2,3"
 
 }
 

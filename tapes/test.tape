@@ -8,7 +8,7 @@ task test : hiertype
   > metrics="metrics.txt"
   :: maxBranchingFactors=@ :: delta=@ :: strategies=@ :: otherDelta=@
   :: grid=@
-  :: .submitter=$grid .action_flags=@ .resource_flags=@
+  :: .submitter=$grid
   :: gpuId=@
 {
   mkdir -p $out

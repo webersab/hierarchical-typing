@@ -9,7 +9,7 @@ task train : hiertype
   :: maxBranchingFactors=@ :: strategies=@ :: delta=@ :: otherDelta=@
   :: regularizer=@ :: batchSize=@ :: devBatchSize=@ :: numEpochs=@
   :: grid=@
-  :: .submitter=$grid .action_flags=@ .resource_flags=@
+  :: .submitter=$grid
   :: gpuId=@
 {
   mkdir -p $out

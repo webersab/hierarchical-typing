@@ -6,7 +6,6 @@ global {
   ducttape_experimental_multiproc=true
 }
 
-import "tapes/sge.tape"
 import "tapes/env.tape"
 
 import "tapes/params.tape"

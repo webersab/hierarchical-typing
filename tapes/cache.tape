@@ -2,7 +2,7 @@ task cache : hiertype
   < data=@
   > dump
   :: contextualizer=@ :: unit=@ :: layers=@
-  :: grid=@ :: .submitter=$grid .action_flags=@ .resource_flags=@
+  :: grid=@
   :: gpuId=@
 {
   mkdir -p $dump
