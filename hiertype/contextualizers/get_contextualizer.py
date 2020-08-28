@@ -23,14 +23,14 @@ def get_contextualizer(
         return XLMRobertaContextualizer.from_model(model_name, device, tokenizer_only=tokenizer_only)
 
     elif model_name.startswith("elmo"):
-        elmo_path_prefix = "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo"
+        elmo_path_prefix = "/disk/scratch_big/sweber/hierarchical-typing"
         elmo_path_id = {
             "elmo-small": "2x1024_128_2048cnn_1xhighway",
             "elmo-medium": "2x2048_256_2048cnn_1xhighway",
             "elmo-original": "2x4096_512_2048cnn_2xhighway",
             "elmo-original-5.5B": "2x4096_512_2048cnn_2xhighway_5.5B"
         }[model_name]
-        elmo_path = f"{elmo_path_prefix}/{elmo_path_id}/elmo_{elmo_path_id}"
+        elmo_path = f"{elmo_path_prefix}/elmo_{elmo_path_id}"
         elmo_weights_path = f"{elmo_path}_weights.hdf5"
         elmo_options_path = f"{elmo_path}_options.json"
         return ELMoContextualizer.from_model(
