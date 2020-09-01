@@ -9,8 +9,8 @@ task train : hiertype
   :: maxBranchingFactors=@ :: strategies=@ :: delta=@ :: otherDelta=@
   :: regularizer=@ :: batchSize=@ :: devBatchSize=@ :: numEpochs=@
   :: grid=@
-  :: .submitter=$grid
-  :: gpuId=@
+  :: .submitter=$grid 
+  :: gpuId=0
 {
   mkdir -p $out
   PYTHONPATH=$hiertype CUDA_VISIBLE_DEVICES=$gpuId \
@@ -24,7 +24,7 @@ task train : hiertype
     --with_other $withOther --lift_other $liftOther \
     --relation_constraint_coef $relationConstraintCoef \
     --num_negative_samples $numNegativeSamples \
-    --max_branching_factors $maxBranchingFactors --delta $delta --other_delta $otherDelta --strategies $strategies \
+    --max_branching_factors $maxBranchingFactors --delta $delta --strategies $strategies \
     --regularizer $regularizer \
     --dev_metric +O_MiF \
     --batch_size $batchSize --dev_batch_size $devBatchSize --num_epochs $numEpochs
@@ -40,8 +40,8 @@ plan TrainAida {
     * (RelConsCoef: 0.3) * (Regularizer: 0.1) * (MarginMode: graded) * (WithOther: True) * (LiftOther: False)
 }
 
-plan TrainFiger {
-  reach train via (Dataset: Figer) * (Contextualizer: elmo-original) * (EmbDropout: 0.5) * (Dropout: 0.1 0.2 0.3) *
+plan TrainFiger{
+  reach train via (Dataset: Figer) * (Contextualizer: elmo-original) * (EmbDropout: 0.5) * (Dropout: 0.1) *
   (ThresholdRatio: 0.2) * (RelConsCoef: 0.1) * (Regularizer: 0.0001) * (WithOther: True) * (LiftOther: False)
 }
 
