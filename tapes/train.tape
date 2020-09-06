@@ -40,7 +40,7 @@ plan TrainAida {
     * (RelConsCoef: 0.3) * (Regularizer: 0.1) * (MarginMode: graded) * (WithOther: True) * (LiftOther: False)
 }
 
-plan TrainFiger{
+plan TrainFiger {
   reach train via (Dataset: Figer) * (Contextualizer: elmo-original) * (EmbDropout: 0.5) * (Dropout: 0.1) *
   (ThresholdRatio: 0.2) * (RelConsCoef: 0.1) * (Regularizer: 0.0001) * (WithOther: True) * (LiftOther: False)
 }
