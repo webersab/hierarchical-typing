@@ -58,9 +58,9 @@ class BeamDecoder(HierarchyDecoder):
                     accepted_children.append(children[i])
 
             if len(accepted_children) == 0 and len(children) != 0:  # has children, but none accepted
-                if self.strategies[l] == "top":
+                if self.strategies == "top":
                     return ({children[0][0]}, True) if len(children) > 0 else (set(), True)  # enforces the top type
-                elif self.strategies[l] == "other":
+                elif self.strategies == "other":
                     return {self.hierarchy.index("/other")}, True  # for OntoNotes
                 else:
                     return set(), True

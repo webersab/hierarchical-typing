@@ -10,7 +10,7 @@ task train : hiertype
   :: regularizer=@ :: batchSize=@ :: devBatchSize=@ :: numEpochs=@
   :: grid=@
   :: .submitter=$grid 
-  :: gpuId=0
+  :: gpuId=1
 {
   mkdir -p $out
   PYTHONPATH=$hiertype CUDA_VISIBLE_DEVICES=$gpuId \
@@ -41,7 +41,7 @@ plan TrainAida {
 }
 
 plan TrainFiger {
-  reach train via (Dataset: Figer) * (Contextualizer: elmo-original) * (EmbDropout: 0.5) * (Dropout: 0.1) *
+  reach train via (Dataset: Figer) * (Contextualizer: elmo-original) * (EmbDropout: 0.5) * (Dropout: 0.3) *
   (ThresholdRatio: 0.2) * (RelConsCoef: 0.1) * (Regularizer: 0.0001) * (WithOther: True) * (LiftOther: False)
 }
 

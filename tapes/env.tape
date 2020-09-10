@@ -8,7 +8,7 @@ package concreteAida :: .versioner=disk .path="/exp/tchen/proj/concrete-aida" .r
 global {
 
   grid="shell"
-  gpuId="0,1,2,3"
+  gpuId="1"
 
 }
 

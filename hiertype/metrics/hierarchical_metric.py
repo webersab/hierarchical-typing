@@ -44,6 +44,7 @@ class HierarchicalMetric(Metric):
         ]
 
         batch_size = len(pred)
+        #out_file = open("/disk/scratch_big/sweber/hierarchical-typing/news_types.res","a",encoding='utf-8')
         for b in range(batch_size):
 
             # self.n += 1
@@ -75,7 +76,6 @@ class HierarchicalMetric(Metric):
             self.overall_metric([pred[b]], [gold[b]])
 
     def get_metric(self, reset: bool) -> Dict[str, float]:
-
         level_metrics = {
             f"L{l}_{k}": v
             for l in range(1, self.num_level)
