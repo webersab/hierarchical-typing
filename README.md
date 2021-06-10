@@ -9,15 +9,3 @@ This is my fork of the hierarchial-typing code. It contains several changes to m
   
  2. Change the local paths in `tapes/env.tape`
 
-This repository contains code for the following paper:
- - Tongfei Chen, Yunmo Chen, Benjamin Van Durme (2020): [Hierarchical Entity Typing via Multi-level Learning to Rank](https://www.aclweb.org/anthology/2020.acl-main.749/). In _Proceedings of ACL_.
-
- ```bibtex
-@inproceedings{weber2021fine,
-  title={Fine-grained General Entity Typing in German using GermaNet},
-  author={Weber, Sabine and Steedman, Mark},
-  booktitle={Proceedings of the Fifteenth Workshop on Graph-Based Methods for Natural Language Processing (TextGraphs-15)},
-  pages={138--143},
-  year={2021}
-}
- ```
